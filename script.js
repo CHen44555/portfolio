@@ -6,7 +6,7 @@
 const galleries = {
     tank: {
         images: [
-            'assets/tank/screenshot1.png',
+            'assets/tank/screenshot1.jpg',
             'assets/tank/screenshot2.png',
             'assets/tank/screenshot3.jpg'
         ],
