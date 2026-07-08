@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈谱澳 - 个人作品集</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">&lt;CPAO/&gt;</a>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#about">关于</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <p class="hero-greeting">👋 你好，我是</p>
+            <h1 class="hero-name">陈谱澳</h1>
+            <p class="hero-title">Unity 游戏开发者</p>
+            <p class="hero-desc">
+                热爱游戏开发，专注于 Unity 引擎，擅长 2D/3D 游戏制作、<br>交互系统开发及虚拟现实技术。
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">查看作品</a>
+                <a href="陈谱澳简历.pdf" class="btn btn-outline" target="_blank">下载简历</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">项目作品</h2>
+            <p class="section-subtitle">点击缩略图放大浏览</p>
+
+            <!-- ============ 项目 1: 坦克大战 ============ -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-tag">Unity 2D · 网络对战</div>
+                    <h3 class="project-name">Unity 坦克大战</h3>
+                    <p class="project-desc">
+                        基于 Unity 引擎开发的多人联网坦克对战游戏。支持注册登录、房间匹配、
+                        实时对战等完整功能。采用 Photon 网络框架实现低延迟同步，
+                        包含完整的 UI 系统、道具系统和战斗逻辑。
+                    </p>
+                    <div class="project-tech">
+                        <span>Unity</span><span>C#</span><span>Photon</span><span>2D</span><span>UI</span>
+                    </div>
+                </div>
+
+                <!-- 截图 -->
+                <div class="gallery">
+                    <div class="gallery-main" id="tank-gallery-main">
+                        <img src="assets/tank/screenshot1.png" alt="坦克大战截图1" id="tankMainImg">
+                        <button class="gallery-prev" onclick="galleryNav('tank', -1)">◀</button>
+                        <button class="gallery-next" onclick="galleryNav('tank', 1)">▶</button>
+                        <div class="gallery-counter" id="tank-counter">1 / 3</div>
+                    </div>
+                    <div class="gallery-thumbs">
+                        <img src="assets/tank/screenshot1.png" class="thumb active" onclick="galleryJump('tank', 0)">
+                        <img src="assets/tank/screenshot2.png" class="thumb" onclick="galleryJump('tank', 1)">
+                        <img src="assets/tank/screenshot3.jpg" class="thumb" onclick="galleryJump('tank', 2)">
+                    </div>
+                </div>
+
+                <!-- 演示视频 -->
+                <div class="video-section">
+                    <h4>🎬 演示视频</h4>
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <!-- ★★★ 上传到 B 站后替换 BV 号 ★★★ -->
+                            <div class="bilibili-placeholder" id="video-tank1">
+                                <div class="placeholder-inner">
+                                    <span class="placeholder-icon">📺</span>
+                                    <p>游戏对战演示</p>
+                                    <p class="placeholder-hint">上传视频到 B站后，将以下链接中的 <code>BV号</code> 替换：</p>
+                                    <code class="bv-code">//player.bilibili.com/player.html?bvid=你的BV号&page=1</code>
+                                </div>
+                            </div>
+                            <span>游戏演示</span>
+                        </div>
+                        <div class="video-card">
+                            <video controls poster="assets/tank/screenshot2.png">
+                                <source src="assets/tank/demo2.mp4" type="video/mp4">
+                                您的浏览器不支持视频播放
+                            </video>
+                            <span>UI 动画展示</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ 项目 2: 中国传统纹样 ============ -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-tag">Unity 3D · VR · 文化传承</div>
+                    <h3 class="project-name">中国传统纹样展示及交互系统</h3>
+                    <p class="project-desc">
+                        基于 Unity 3D 引擎开发的中国传统纹样数字化展示系统。用户可以在虚拟空间中
+                        浏览、旋转、缩放各种传统纹样，了解其历史背景和文化内涵。
+                        支持 PC 端独立运行，具有沉浸式的交互体验。
+                    </p>
+                    <div class="project-tech">
+                        <span>Unity 3D</span><span>C#</span><span>UI/UX</span><span>文化遗产</span><span>交互设计</span>
+                    </div>
+                </div>
+
+                <!-- 演示视频 -->
+                <div class="video-section">
+                    <h4>🎬 系统演示</h4>
+                    <div class="video-grid single-video">
+                        <div class="video-card">
+                            <!-- ★★★ 上传到 B 站后替换 BV 号 ★★★ -->
+                            <div class="bilibili-placeholder" id="video-pattern">
+                                <div class="placeholder-inner">
+                                    <span class="placeholder-icon">📺</span>
+                                    <p>中国传统纹样展示系统演示</p>
+                                    <p class="placeholder-hint">上传视频到 B站后，将以下链接中的 <code>BV号</code> 替换：</p>
+                                    <code class="bv-code">//player.bilibili.com/player.html?bvid=你的BV号&page=1</code>
+                                </div>
+                            </div>
+                            <span>系统完整演示</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>我是一名充满热情的<strong>Unity 游戏开发者</strong>，就读于数字媒体技术专业。</p>
+                    <p>熟练掌握 <strong>C#</strong>、Unity 2D/3D 开发、游戏系统设计、UI 开发和网络编程。
+                    对虚拟现实和文化遗产数字化也有浓厚的兴趣和实践经验。</p>
+                    <p>热爱游戏、热爱创作，期待能用自己的技术创造打动人心的作品。</p>
+                </div>
+                <div class="skills-section">
+                    <h3>技术栈</h3>
+                    <div class="skill-tags">
+                        <span>C#</span><span>Unity</span><span>2D/3D</span>
+                        <span>Photon</span><span>VR</span><span>UI/UX</span>
+                        <span>Git</span><span>Blender</span><span>Premiere</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>© 2026 陈谱澳</p>
+        </div>
+    </footer>
+
+    <!-- 图片灯箱 -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img src="" alt="放大预览" id="lightbox-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
